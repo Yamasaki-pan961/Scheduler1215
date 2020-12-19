@@ -26,6 +26,7 @@ class TaskFragment : Fragment() {
         taskViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        taskViewModel.updateActionBarTitle("たすく")
         return root
     }
 }
