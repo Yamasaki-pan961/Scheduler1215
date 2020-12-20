@@ -17,8 +17,6 @@ import java.util.*
 
 
 class TimelineFragment() : Fragment() {
-    lateinit var fab:View
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,19 +29,6 @@ class TimelineFragment() : Fragment() {
         timelineMainLayout.layoutParams.height=1500.dp
         var title = getDate()
         (activity as AppCompatActivity)!!.supportActionBar!!.title = title
-        fab = (activity as AppCompatActivity)!!.findViewById(R.id.floatingActionButton)
-        fab.setOnClickListener{view ->
-            val button = MaterialButton(activity as AppCompatActivity, null, R.attr.materialButtonStyle)
-            button.id = View.generateViewId()
-            button.setBackgroundColor(resources.getColor(R.color.material400_pink))
-            button.text = "今日の予定"
-            val button1 = MaterialButton(activity as AppCompatActivity, null, R.attr.materialButtonStyle)
-            button1.id = View.generateViewId()
-            button1.setBackgroundColor(resources.getColor(R.color.material400_green))
-            button1.text = "今日の予定"
-            displayInitializer.setScheduleView(button,2)
-            displayInitializer.setScheduleView(button1, 3)
-        }
         return root
     }
 

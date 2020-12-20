@@ -1,12 +1,15 @@
 package com.example.scheduler1215
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
 
@@ -22,5 +25,9 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_timeline, R.id.navigation_dashboard, R.id.navigation_notifications))
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        val fab = findViewById<View>(R.id.floatingActionButton)
+        fab.setOnClickListener{view ->
+            Toast.makeText(this, "fabが押されたました", Toast.LENGTH_SHORT).show()
+        }
     }
 }
